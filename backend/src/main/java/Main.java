@@ -12,7 +12,7 @@ public class Main {
             config.enableCorsForAllOrigins(); // This will help in frontend-backend communication
         }).start(7001);
 
-        System.out.println("Server started at http://localhost:7001/");
+        System.out.println("\nServer started at http://localhost:7001/");
         
         // go through and create all of my routes
         configureRoutes(app);
@@ -36,7 +36,11 @@ public class Main {
 
             person.put("Interests", interests);
 
+            // set the data to be sent
             ctx.json(person);
+
+            // debug message to know what was done
+            System.out.println("Sending person data to frontend: " + person);
         });
        
     }
