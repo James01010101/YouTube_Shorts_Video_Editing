@@ -7,3 +7,11 @@ and Backend of Java
 
 Ill make a video editing program to automate video editing of my youtube videos.
 
+
+Frontend
+Public -
+this is where all of the files that dont need to be compiled or processed go, like html and images
+
+Src - 
+this is where all my code and styling files go that need to be compiled and processed first.
+
