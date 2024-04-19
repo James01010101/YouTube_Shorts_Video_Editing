@@ -1,28 +1,38 @@
-import React, { useState } from "react"; 
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+
+// styling
 import './App.css';
 
+// import my pages
+import Home from './pages/Home';
+import Topic from './pages/Topic';
+
+
 function App() {
-
-    const [age, setAge] = useState(0);
-    const getAge = () => {
-        console.log("Getting person data")
-        fetch('http://localhost:7001/get_name')
-            .then(response => response.json())
-            .then(data => {
-                console.log("Data received: ", data);
-                setAge(data["Age"]);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    };
-
+    // basic template for the different pages
     return (
-        <div id="mainDiv">
-            <h1>Click to get age</h1>
-            <button onClick={getAge}>Get Age</button>
-            <p id="ageText">Your age is: {age}</p>
-        </div>
+        <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>  // Creates a link to the home page
+                </li>
+                <li>
+                  <Link to="/topic">Topic</Link>  // Creates a link to the topic page
+                </li>
+              </ul>
+            </nav>
+    
+            {/* A <Switch> looks through its children <Route>s and
+                renders the first one that matches the current URL. */}
+            <Routes>
+                <Route path="/topic" element={<Topic />} />
+                <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
+        </Router>
     );
 }
 

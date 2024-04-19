@@ -44,6 +44,29 @@ public class Main {
             // debug message to know what was done
             System.out.println("Sending person data to frontend: " + person);
         });
+
+
+
+        // TODO: #4 Attach this to the database when i get it working instead of this temp data
+        app.get("/get_all_topics", ctx -> {
+            List<String[]> topics = new ArrayList<>();
+
+            topics.add(new String[]{"TWD", "The Walking Dead"});
+            topics.add(new String[]{"AOT", "Attack On Titan"});
+            topics.add(new String[]{"Fortnite", "Fortnite"});
+            topics.add(new String[]{"Horizon", "Horizon"});
+            topics.add(new String[]{"Invincible", "Invincible"});
+            topics.add(new String[]{"JJK", "Jujutsu Kaisen"});
+            topics.add(new String[]{"MCU", "Marvel Cinematic Universe"});
+            topics.add(new String[]{"Star Wars", "Star Wars"});
+            topics.add(new String[]{"TLOU", "The Last Of Us"});
+
+            // set the data to be sent
+            ctx.json(topics);
+
+            // debug message to know what was done
+            System.out.println("Sending topics data to frontend");
+        });
        
     }
 }

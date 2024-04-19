@@ -1,0 +1,58 @@
+
+
+
+#mainDiv {
+    text-align: center;
+    margin-top: 0%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Centers children horizontally */
+    align-items: center; /* Centers children vertically */
+}
+
+
+#topicTitle {
+    font-size: 100px;
+    font-weight: bold;
+    margin: -10px;
+
+    color: white;
+}
+
+
+/* Scrollable list for Topics to choose from */
+.topics-scrollable-list {
+    display: flex;
+    flex-direction: column;
+
+    max-height: 500px;
+    max-width: 500px;
+    min-width: 300px;
+
+    overflow-y: auto;
+    white-space: nowrap;
+    padding: 10px;
+    /*background: #f0f0f0;*/
+    /*border: 5px solid #ccc;*/
+}
+
+.scrollable-list-item {
+    padding: 5px 20px;
+    margin: 1px;
+
+    cursor: pointer;  /* Indicates that an item is clickable */
+    background-color: rgb(20, 10, 217);
+    border: 1px solid #ccc;
+    border-radius: 30px;
+
+    /* Text colour and size */
+    color: white;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.scrollable-list-item:hover {
+    background-color: #657af1;
+}
+
