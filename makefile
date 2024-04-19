@@ -22,6 +22,11 @@ run_backend: clear
 	cd backend && mvn exec:java -Dexec.mainClass="Main"
 
 
+
+
+run_frontend: clear
+	cd frontend && npm start
+
 # so this can be used as a depedance so i can do it first before other makes
 clear:
 	clear
