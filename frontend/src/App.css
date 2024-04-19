@@ -1,0 +1,46 @@
+
+
+/* This will be used for the root body of the page */
+#mainBody {
+    background-color: rgb(50, 77, 215);
+}
+
+
+
+#mainDiv {
+    text-align: center;
+    margin-top: 10%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* EXAMPLES */
+/* This is how you write id specific styling elements (js = id="") */
+#idSpecificStyling {
+    color: red;
+}
+
+/* This is how you write class specific styling elements (js = className="") */
+.classSpecificStyling {
+    color: blue;
+}
+
