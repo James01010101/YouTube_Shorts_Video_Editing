@@ -1,0 +1,12 @@
+
+
+
+/* This is how you write id specific styling elements */
+#idSpecificStyling {
+    color: red;
+}
+
+/* This is how you write class specific styling elements */
+.classSpecificStyling {
+    color: blue;
+}
