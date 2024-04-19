@@ -13,8 +13,12 @@ compile_backend: clean_backend
 # -e to show errors
 	cd backend && mvn compile
 
-# run the backend java code
-run_backend: clear compile_backend
+# compile and run the backend java code
+compile_run_backend: clear compile_backend
+	cd backend && mvn exec:java -Dexec.mainClass="Main"
+
+# just run the backend java code dont clean and recompile if im not changing anything
+run_backend: clear
 	cd backend && mvn exec:java -Dexec.mainClass="Main"
 
 
