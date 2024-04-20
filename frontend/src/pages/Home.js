@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 // styling
 import './Home.css';
@@ -39,15 +40,18 @@ function Home() {
     
 
     // TODO: #6 When clicking on an item go to its topics page
+    const navigate = useNavigate();
     const handleItemClick = (item) => {
         console.log('Item clicked:', item[1]);
+
+        navigate('/topic/' + item[1]);
     };
 
 
     return (
         <div id="mainDiv">
             <h1 id="topicTitle">TOPICS</h1>
-            <TopicsScrollableList items={topics} onItemClick={handleItemClick} />
+            <TopicsScrollableList id="topicsList" items={topics} onItemClick={handleItemClick} />
         </div>
     );
 }

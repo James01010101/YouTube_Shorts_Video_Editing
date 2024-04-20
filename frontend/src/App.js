@@ -28,7 +28,7 @@ function App() {
             {/* A <Switch> looks through its children <Route>s and
                 renders the first one that matches the current URL. */}
             <Routes>
-                <Route path="/topic" element={<Topic />} />
+                <Route path="/topic/:topicID" element={<Topic />} />
                 <Route path="/" element={<Home />} />
             </Routes>
           </div>
