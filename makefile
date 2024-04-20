@@ -27,6 +27,12 @@ run_backend: clear
 run_frontend: clear
 	cd frontend && npm start
 
+
+# run the tests for the frontend
+test_frontend: clear
+	cd frontend && npm test
+
+
 # so this can be used as a depedance so i can do it first before other makes
 clear:
 	clear
