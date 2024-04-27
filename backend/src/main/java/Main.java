@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        // create the app that the frontend will connect to
         Javalin app = Javalin.create(config -> {
             config.defaultContentType = "text/plain";
             config.enableCorsForAllOrigins(); // This will help in frontend-backend communication
