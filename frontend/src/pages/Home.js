@@ -39,7 +39,6 @@ function Home() {
     }, []); // the empty array means this function will only run once
     
 
-    // TODO: #6 When clicking on an item go to its topics page
     const navigate = useNavigate();
     const handleItemClick = (item) => {
         console.log('Item clicked:', item[1]);
