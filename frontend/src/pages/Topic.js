@@ -9,7 +9,9 @@ function Topic() {
 
     return (
         <div id="mainDiv">
-            <p>TOPIC: {topicID}</p>
+            <p id="topic">TOPIC: {topicID}</p>
+
+            {/* 3 buttons*/}
         </div>
     );
 }
