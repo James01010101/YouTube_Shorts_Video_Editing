@@ -4,9 +4,22 @@
     display: flex;
     background-color: white;
     border-radius: 2cm;
-    margin-top: -10px;
     padding: 10px;
 
-    
     font-size: 50px;
+}
+
+.topicButton{
+    background-color: #657af1;
+    /* by default buttons have a light/dark border applied */
+    border: 2px solid lightblue;
+
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    
 }
