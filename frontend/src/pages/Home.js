@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 // styling
 import './Home.css';
+import { base_address } from '../config.js';
 
 function Home() {
 
@@ -26,7 +27,7 @@ function Home() {
     // this is a function that will run once when the page loads ad every time it reloads
     useEffect(() => {
         console.log("Getting all topic titles")
-        fetch('http://localhost:7001/get_all_topics')
+        fetch(`${base_address}:7001/get_all_topics`)
             .then(response => response.json())
             .then(data => {
                 console.log("Data received: ", data);
