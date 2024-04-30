@@ -22,6 +22,13 @@ run_backend: clear
 	cd backend && mvn exec:java -Dexec.mainClass="Main"
 
 
+# run a test java file where i can test out some code
+test_java: clear
+	javac backend/src/main/java/Test.java backend/src/main/java/com/main/TextObject.java
+	java -cp backend/src/main/java Test
+	rm backend/src/main/java/com/main/*.class backend/src/main/java/*.class
+
+
 
 
 run_frontend: clear
