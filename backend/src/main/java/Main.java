@@ -5,9 +5,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.File;
 
 
 public class Main {
+
+    // this will be where my settings json object is stored but i wont know what one it is until i select the topic and quiz
+    private static Map<String, Object> settings = null;
+
+
+
     public static void main(String[] args) {
         // create the app that the frontend will connect to
         Javalin app = Javalin.create(config -> {
@@ -16,14 +24,20 @@ public class Main {
         }).start(7001);
 
         System.out.println("\nServer started at PORT 7001");
+
+        // create me editor
+        Editor editor = new Editor();
+
         
         // go through and create all of my routes
-        configureRoutes(app);
+        configureBasicRoutes(app);
+        configureEditorRoutes(app);
+
 
         
     }
 
-    private static void configureRoutes(Javalin app) {
+    private static void configureBasicRoutes(Javalin app) {
         app.get("/", ctx -> ctx.result("Welcome to the homepage!"));
         app.get("/about", ctx -> ctx.result("About us page content here."));
 
@@ -47,5 +61,27 @@ public class Main {
             // debug message to know what was done
             System.out.println("Sending topics data to frontend");
         }); 
+    }
+
+
+    private static void loadQuizSettings(String topicShort, int quiz_num) {
+        // load settings file and return is as a hashmap (json)
+        ObjectMapper mapper = new ObjectMapper();
+
+        String filePath = "database/topics/" + topicShort + "/" + quiz_num + "/Settings.json";
+        try {
+            settings = mapper.readValue(new File(filePath), HashMap.class);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void configureEditorRoutes(Javalin app) {
+        app.get("/{topicShort}/{quiz_num}/load_intro_settings", ctx -> {
+            String topicShort = ctx.pathParam("topicShort");
+            int quiz_num = Integer.parseInt(ctx.pathParam("quizNum"));
+
+            loadQuizSettings(topicShort, quiz_num);
+        });
     }
 }
