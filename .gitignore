@@ -30,6 +30,11 @@ replay_pid*
 # DS_Store files
 *.DS_Store
 
+# image files
+*.png
+*.jpeg
+*.jpg
+
 
 # BACKEND
 # target directory mainly for backend
