@@ -30,6 +30,20 @@ test_java: clear
 
 
 
+# mariadb SERVER STUFF
+server_status:
+	sudo systemctl status mariadb
+
+server_start:
+	sudo systemctl start mariadb
+
+server_stop:
+	sudo systemctl stop mariadb
+
+
+
+
+
 
 run_frontend: clear
 	cd frontend && npm start
